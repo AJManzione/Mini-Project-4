@@ -6,10 +6,10 @@ var words = ["JavaScript", "flexbox", "Attributes", "Local Storage", "CSS", "HTM
 var startBtn = document.getElementById("play");
 // Score object
 //      wins
-//      loses
+//      losses
 var score = {
     wins: 0,
-    loses: 0
+    losses: 0
 }
 // Current word (as an array of LETTER objects) - use split function
 //      letter
@@ -23,8 +23,8 @@ var displayWordEl = document.getElementById("display-word");
 var timerEl = document.getElementById("time");
 // winds
 var winsEl = document.getElementById("wins");
-// loses
-var losesEl = document.getElementById("loses");
+// losses
+var lossesEl = document.getElementById("losses");
 
 // button to start game
 //  event listener for click associated with id
@@ -87,5 +87,8 @@ function countDown() {
 };
 
 function loseGame() {
-    
+    score.losses++;
+    localStorage.setItem("score", JSON.stringify(score));
+
+    lossesEl.textContent = score.losses;
 }
