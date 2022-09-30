@@ -3,6 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+
 }
 
 #container {
@@ -18,6 +20,35 @@ body {
     margin-top: 20px;
 }
 
+ol {
+    list-style: none;
+    display: inline-block;
+    position: absolute  ;
+    margin-left: 220px;
+    margin-top: 130px;
+}
+
+#displayed-word {
+    margin-top: 100px;
+    margin-left: 120px;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    width: 70%;
+    height: 10%px;
+}
+
+
+
+#play {
+    margin-top: 100px;
+    margin-left: 380px;
+    color: white;
+    width: 10%;
+    height: 10%;
+    border-radius: 20px;
+    background-color: rgb(227, 103, 62);;
+}
 
 #stats {
     display: flex;
