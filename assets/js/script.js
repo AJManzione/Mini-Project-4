@@ -1,4 +1,13 @@
-// Add array with 10 words
+// Variables:
+// Array with 10 words
+// Start Game Button
+// Score object
+//      wins
+//      loses
+// Current word (as an array of LETTER objects) - use split function
+//      letter
+//      visibility
+
 
 // button to start game
 //  event listener for click associated with id
