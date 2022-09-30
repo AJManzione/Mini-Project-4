@@ -4,6 +4,7 @@ body {
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
+
 }
 
 #container {
@@ -18,7 +19,6 @@ body {
     text-align: center;
     margin-top: 20px;
 }
-
 
 ol {
     list-style: none;
@@ -49,3 +49,12 @@ ol {
     border-radius: 20px;
     background-color: rgb(227, 103, 62);;
 }
+
+#stats {
+    display: flex;
+    justify-content: right;
+    list-style: block;
+}
+
+#displayed
+

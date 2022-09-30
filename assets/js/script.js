@@ -1,13 +1,30 @@
 // Variables:
 // Array with 10 words
+var words = ["JavaScript", "flexbox", "Attributes", "Local Storage", "CSS", "HTML", "website", "object", "branch", "pull request"];
+
 // Start Game Button
+var startBtn = document.querySelector("#play");
 // Score object
 //      wins
 //      loses
+var score = {
+    wins: 0,
+    loses: 0
+}
 // Current word (as an array of LETTER objects) - use split function
 //      letter
 //      visibility
+var current = [];
 
+// HTML elements:
+// diplay word
+var displayWord = document.querySelector("#display-word");
+// timer
+var time = document.querySelector("#time");
+// winds
+var wins = document.querySelector("#wins");
+// loses
+var loses = document.querySelector("#loses");
 
 // button to start game
 //  event listener for click associated with id
