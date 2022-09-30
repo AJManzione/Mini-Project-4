@@ -26,6 +26,10 @@ var winsEl = document.getElementById("wins");
 // losses
 var lossesEl = document.getElementById("losses");
 
+// timer
+var timeLeft = 0;
+
+
 // button to start game
 //  event listener for click associated with id
 //  when click:
@@ -42,6 +46,34 @@ startBtn.addEventListener("click", countDown);
 //          - shown letters
 //          - hidden letters underscore
 //      - listen for key event
+function chooseRandomWord() {
+    // choose random word
+    var random = Math.floor(Math.random()* (words.length - 1));
+    var word = words[random];
+
+    // choose 2 random letters to show
+    var randomLetters = [];
+    for (var i = 0; i < 2; i++) {
+        var randomLetter = Math.floor(Math.random()* (word.length - 1));
+        if (!randomLetters.includes(randomLetter)) {
+            randomLetters.push(randomLetter);
+        }
+    }
+
+    // 2 indexes which have shown letters
+    // we need text which has a hidden visbility and a visible visibility
+    //      hidden --> _
+    //      visible --> word[i] (or letter)
+    // on key down
+    //      if key = hidden letter 
+    //          change state to visible
+    //          remove letter from remainingChar
+    // variable remainingChar: contains remaining letters. 
+    //      Once empty, player wins
+
+    
+    
+}
 
 // get user input (which keys they type)
     // if key = next missing character, 
@@ -62,7 +94,7 @@ startBtn.addEventListener("click", countDown);
 //      if timer runs out, add to losses (local storage)
 
 function countDown() {
-    var timeLeft = 30;
+    timeLeft = 30;
 
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   //We then declare timeInterval and assign it the value of setInterval(). Here, we will update the text in timerEl at an interval of 1000 ms, or 1 second. With each interval, we decrement the value of timeLeft. If timeLeft is equal to 0, we use clearInterval() to stop timeInterval().
