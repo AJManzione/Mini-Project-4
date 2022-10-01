@@ -20,7 +20,7 @@ body {
     margin-top: 20px;
 }
 
-ol {
+ul {
     list-style: none;
     display: inline-block;
     position: absolute  ;
@@ -29,8 +29,6 @@ ol {
 }
 
 #displayed-word {
-    margin-top: 100px;
-    margin-left: 120px;
     font-size: 30px;
     color: black;
     text-align: center;
@@ -41,8 +39,6 @@ ol {
 
 
 #play {
-    margin-top: 100px;
-    margin-left: 380px;
     color: white;
     width: 10%;
     height: 10%;

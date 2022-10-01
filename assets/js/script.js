@@ -1,7 +1,7 @@
 // Variables:
 // Array with 10 words
 var words = ["JavaScript", "flexbox", "Attributes", "Local Storage", "CSS", "HTML", "website", "object", "branch", "pull request"];
-
+var wordsPushed = "";
 // Start Game Button
 var startBtn = document.getElementById("play");
 // Score object
@@ -14,7 +14,9 @@ var score = {
 // Current word (as an array of LETTER objects) - use split function
 //      letter
 //      visibility
-var current = [];
+var currentWord = "";
+var newWord = ""
+
 
 // HTML elements:
 // diplay word
@@ -35,11 +37,11 @@ var timeLeft = 0;
 //  when click:
 //      - timer reset to 30
 //      - then choose random word
-startBtn.addEventListener("click", countDown);
+startBtn.addEventListener("click", chooseRandomWord);
 
 // pick a random word for list
 //      hide certain letters
-// when called:
+//      when called:
 //      - choose random word
 //      - choose random letters to show (letter status hidden and visible)
 //      - display word to user 
@@ -49,17 +51,55 @@ startBtn.addEventListener("click", countDown);
 function chooseRandomWord() {
     // choose random word
     var random = Math.floor(Math.random()* (words.length - 1));
-    var word = words[random];
+     currentWord = words[random];
+    
+
+
+    displayWordEl.textContent = currentWord;
+    
+
 
     // choose 2 random letters to show
     var randomLetters = [];
     for (var i = 0; i < 2; i++) {
-        var randomLetter = Math.floor(Math.random()* (word.length - 1));
+        var randomLetter = Math.floor(Math.random()* (currentWord.length - 1));
         if (!randomLetters.includes(randomLetter)) {
             randomLetters.push(randomLetter);
         }
     }
+  
+      for ( var b = 0; b <currentWord.length; b++) {
+        
+        if (randomLetters.includes(b)) {
+          wordsPushed = wordsPushed.concat(currentWord.charAt(b));
+        } 
+        else {
+          wordsPushed = wordsPushed.concat("_");
+          
+        }
+      }
+      displayWordEl.textContent = wordsPushed;
+}
+  
 
+  document.addEventListener("keydown", checkLetter)
+
+  function checkLetter (event) {
+    var keyPress = event.key;
+
+
+
+        //When the key is pressed and is included within random word
+
+    if (currentWord.includes(keyPress)) {
+
+    }
+
+  }
+
+
+
+  
     // 2 indexes which have shown letters
     // we need text which has a hidden visbility and a visible visibility
     //      hidden --> _
@@ -73,7 +113,7 @@ function chooseRandomWord() {
 
     
     
-}
+
 
 // get user input (which keys they type)
     // if key = next missing character, 
